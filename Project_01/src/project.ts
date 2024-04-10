@@ -1,12 +1,7 @@
-let books = ["1984", "Brave New World"];
-/*let foundBook; // type any */
-let foundBook: string | undefined;
+let book = { title: "a day", cost: 23 };
+let pen = { title: "pen", cost: 12 };
+let notebook = { title: "notebook" };
 
-for (let book of books) {
-  if (book === "1983") {
-    foundBook = book;
-    foundBook = foundBook.toUpperCase();
-    break;
-  }
-}
-console.log(foundBook?.length);
+let mixed: { title: string; cost?: number }[] = [book, pen, notebook];
+
+console.log(mixed);
