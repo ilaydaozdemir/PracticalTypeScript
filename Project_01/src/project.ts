@@ -1,10 +1,25 @@
-const names: string[] = ["ali", "ahmet", "fatma"];
-
-function isNameList(name: string): boolean {
-  return names.includes(name);
+enum ServerResponseStatus {
+  Success = 200,
+  Error = "error",
 }
+interface ServerResponse {
+  result: ServerResponseStatus;
+  data: string[];
+}
+function getServerResponse(): ServerResponse {
+  return {
+    result: ServerResponseStatus.Success,
+    data: ["item1", "item2"],
+  };
+}
+function getErrorResponse(): ServerResponse {
+  return {
+    result: ServerResponseStatus.Error,
+    data: ["item3", "item4"],
+  };
+}
+const response: ServerResponse = getServerResponse();
+console.log(response);
 
-let nameCheck = "ali";
-if (isNameList(nameCheck)) {
-  console.log(`${nameCheck} is in the list`);
-} else console.log(`${nameCheck} is not the list`);
+const error: ServerResponse = getErrorResponse();
+console.log(error);
