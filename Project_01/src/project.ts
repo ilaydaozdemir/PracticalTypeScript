@@ -1,7 +1,10 @@
-let book = { title: "a day", cost: 23 };
-let pen = { title: "pen", cost: 12 };
-let notebook = { title: "notebook" };
+const names: string[] = ["ali", "ahmet", "fatma"];
 
-let mixed: { title: string; cost?: number }[] = [book, pen, notebook];
+function isNameList(name: string): boolean {
+  return names.includes(name);
+}
 
-console.log(mixed);
+let nameCheck = "ali";
+if (isNameList(nameCheck)) {
+  console.log(`${nameCheck} is in the list`);
+} else console.log(`${nameCheck} is not the list`);
